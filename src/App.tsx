@@ -1,0 +1,34 @@
+/**
+ * @license
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+import React, { Suspense } from 'react';
+import './i18n/config';
+import { Header } from './components/layout/Header';
+import { Hero } from './components/sections/Hero';
+import { Services } from './components/sections/Services';
+import { About } from './components/sections/About';
+import { Gallery } from './components/sections/Gallery';
+import { Contact } from './components/sections/Contact';
+import { Location } from './components/sections/Location';
+import { Footer } from './components/layout/Footer';
+
+export default function App() {
+  return (
+    <Suspense fallback={<div className="h-screen flex items-center justify-center">Ladataan...</div>}>
+      <div className="min-h-screen flex flex-col">
+        <Header />
+        <main className="flex-grow">
+          <Hero />
+          <Services />
+          <About />
+          <Gallery />
+          <Contact />
+          <Location />
+        </main>
+        <Footer />
+      </div>
+    </Suspense>
+  );
+}

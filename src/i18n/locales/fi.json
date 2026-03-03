@@ -1,0 +1,62 @@
+{
+  "nav": {
+    "home": "Etusivu",
+    "services": "Palvelut",
+    "about": "Yritys",
+    "gallery": "Galleria",
+    "contact": "Ota yhteyttä"
+  },
+  "hero": {
+    "title": "Ammattitaitoista autokorjausta ja maalausta",
+    "subtitle": "IS-Autopaint Oy – Laatua ja luotettavuutta Hyvinkäällä.",
+    "cta": "Pyydä tarjous"
+  },
+  "services": {
+    "title": "Palvelumme",
+    "body_repairs": {
+      "title": "Kolarikorjaukset",
+      "desc": "Vauriokorjaukset ammattitaidolla alkuperäiseen kuntoon."
+    },
+    "plastic_repairs": {
+      "title": "Muoviosien korjaus",
+      "desc": "Säästä rahaa ja luontoa korjaamalla muoviosat uudenveroisiksi."
+    },
+    "painting": {
+      "title": "Maalauspalvelut",
+      "desc": "Korkealaatuiset automaalaukset uunikuivauksella."
+    },
+    "rust_protection": {
+      "title": "Ruostesuojaus",
+      "desc": "Pidennä autosi elinikää laadukkaalla suojauksella."
+    }
+  },
+  "about": {
+    "title": "Laatua ja kokemusta",
+    "p1": "IS-Autopaint Oy on erikoistunut kolarivaurioiden ja muoviosien korjauksiin. Meillä on pitkä kokemus alalta ja käytämme vain parhaita materiaaleja ja uusinta tekniikkaa.",
+    "p2": "Tavoitteemme on palauttaa vaurioitunut ajoneuvo alkuperäiseen kuntoonsa mahdollisimman nopeasti laadusta tinkimättä."
+  },
+  "gallery": {
+    "title": "Työn jälki"
+  },
+  "contact": {
+    "title": "Ota yhteyttä",
+    "name": "Nimi",
+    "phone": "Puhelinnumero",
+    "message": "Viesti",
+    "submit": "Lähetä",
+    "success": "Viesti lähetetty onnistuneesti!",
+    "error": "Jokin meni vikaan. Yritä uudelleen.",
+    "validation": {
+      "required": "Tämä kenttä on pakollinen",
+      "phone": "Anna voimassa oleva puhelinnumero"
+    }
+  },
+  "location": {
+    "title": "Sijainti",
+    "address": "Tervamäentie 179/5, 04410 Hyvinkää",
+    "hours": "Ma-Pe: 08:00 - 16:30"
+  },
+  "footer": {
+    "rights": "Kaikki oikeudet pidätetään."
+  }
+}
