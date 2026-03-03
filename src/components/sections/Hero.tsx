@@ -1,6 +1,7 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { motion } from 'motion/react';
+import { MEDIA } from '@/src/config/media';
 
 export const Hero = () => {
   const { t } = useTranslation();
@@ -9,9 +10,10 @@ export const Hero = () => {
     <section className="relative h-screen flex items-center justify-center overflow-hidden bg-zinc-950">
       <div className="absolute inset-0 opacity-40">
         <img
-          src="https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?auto=format&fit=crop&q=80&w=2000"
+          src={MEDIA.hero.main}
           alt="Auto repair workshop"
           className="w-full h-full object-cover"
+          loading="lazy"
           referrerPolicy="no-referrer"
         />
       </div>

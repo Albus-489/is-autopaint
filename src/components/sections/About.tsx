@@ -1,6 +1,7 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { motion } from 'motion/react';
+import { MEDIA } from '@/src/config/media';
 
 export const About = () => {
   const { t } = useTranslation();
@@ -29,9 +30,10 @@ export const About = () => {
           className="relative aspect-video lg:aspect-square bg-zinc-100 overflow-hidden"
         >
           <img
-            src="https://images.unsplash.com/photo-1530046339160-ce3e5b0c7a2f?auto=format&fit=crop&q=80&w=1000"
+            src={MEDIA.about.workshop}
             alt="Professional painting"
             className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
+            loading="lazy"
             referrerPolicy="no-referrer"
           />
         </motion.div>

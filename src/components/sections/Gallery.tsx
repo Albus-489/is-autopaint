@@ -3,15 +3,7 @@ import { useTranslation } from 'react-i18next';
 import Lightbox from 'yet-another-react-lightbox';
 import 'yet-another-react-lightbox/styles.css';
 import { motion } from 'motion/react';
-
-const images = [
-  { src: 'https://images.unsplash.com/photo-1599256621730-535171e28e50?auto=format&fit=crop&q=80&w=800', alt: 'Car repair 1' },
-  { src: 'https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?auto=format&fit=crop&q=80&w=800', alt: 'Car painting 1' },
-  { src: 'https://images.unsplash.com/photo-1507702553912-a15641ec572c?auto=format&fit=crop&q=80&w=800', alt: 'Workshop' },
-  { src: 'https://images.unsplash.com/photo-1517524206127-48bbd363f3d7?auto=format&fit=crop&q=80&w=800', alt: 'Detailing' },
-  { src: 'https://images.unsplash.com/photo-1625047509168-a7026f36fe04?auto=format&fit=crop&q=80&w=800', alt: 'Body work' },
-  { src: 'https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?auto=format&fit=crop&q=80&w=800', alt: 'Finish' },
-];
+import { MEDIA } from '@/src/config/media';
 
 export const Gallery = () => {
   const { t } = useTranslation();
@@ -28,9 +20,9 @@ export const Gallery = () => {
         </div>
 
         <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-          {images.map((img, i) => (
+          {MEDIA.gallery.map((img, i) => (
             <motion.div
-              key={i}
+              key={img.id}
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
@@ -53,7 +45,7 @@ export const Gallery = () => {
           index={index}
           open={index >= 0}
           close={() => setIndex(-1)}
-          slides={images.map(img => ({ src: img.src }))}
+          slides={MEDIA.gallery.map(img => ({ src: img.src }))}
         />
       </div>
     </section>
