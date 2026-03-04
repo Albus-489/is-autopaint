@@ -1,10 +1,17 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { motion } from 'motion/react';
+import { motion, useScroll, useTransform } from 'motion/react';
 import { MEDIA } from '@/src/config/media';
 
 export const Hero = () => {
   const { t } = useTranslation();
+  const { scrollY } = useScroll();
+
+  // Smoothly transform glassmorphism properties based on scroll position (0 to 500px)
+  const backdropFilter = useTransform(scrollY, [0, 500], ['blur(12px)', 'blur(0px)']);
+  const backgroundColor = useTransform(scrollY, [0, 500], ['rgba(255, 255, 255, 0.4)', 'rgba(255, 255, 255, 0)']);
+  const borderColor = useTransform(scrollY, [0, 500], ['rgba(255, 255, 255, 0.2)', 'rgba(255, 255, 255, 0)']);
+  const opacity = useTransform(scrollY, [0, 500], [1, 0.8]); // Slight fade for the whole block content if desired, or keep at 1
 
   return (
     <section className="relative h-screen flex items-center justify-center overflow-hidden bg-white">
@@ -23,7 +30,13 @@ export const Hero = () => {
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8 }}
-          className="bg-white/40 backdrop-blur-md border border-white/20 p-8 md:p-16 rounded-[2rem] max-w-4xl text-center shadow-2xl shadow-black/5"
+          style={{ 
+            backdropFilter, 
+            backgroundColor, 
+            borderColor,
+            WebkitBackdropFilter: backdropFilter // For Safari support
+          }}
+          className="border p-8 md:p-16 rounded-[2rem] max-w-4xl text-center shadow-2xl shadow-black/5"
         >
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
