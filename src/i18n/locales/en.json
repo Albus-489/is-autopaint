@@ -1,0 +1,68 @@
+{
+  "nav": {
+    "home": "Home",
+    "services": "Services",
+    "about": "Company",
+    "beforeAfter": "Before & After",
+    "gallery": "Gallery",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title": "Professional Auto Repair and Painting",
+    "subtitle": "IS-Autopaint Oy – Quality and reliability in Hyvinkää.",
+    "cta": "Request a Quote"
+  },
+  "services": {
+    "title": "Our Services",
+    "body_repairs": {
+      "title": "Collision Repairs",
+      "desc": "Damage repairs with professional craftsmanship to original condition."
+    },
+    "plastic_repairs": {
+      "title": "Plastic Part Repair",
+      "desc": "Save money and nature by repairing plastic parts to like-new condition."
+    },
+    "painting": {
+      "title": "Painting Services",
+      "desc": "High-quality automotive painting with oven drying."
+    },
+    "rust_protection": {
+      "title": "Rust Protection",
+      "desc": "Extend your car's lifespan with high-quality protection."
+    }
+  },
+  "about": {
+    "title": "Quality and Experience",
+    "p1": "IS-Autopaint Oy specializes in collision damage and plastic part repairs. We have long-term experience in the industry and use only the best materials and latest technology.",
+    "p2": "Our goal is to restore damaged vehicles to their original condition as quickly as possible without compromising quality."
+  },
+  "gallery": {
+    "title": "Our Work"
+  },
+  "beforeAfter": {
+    "title": "Before & After",
+    "before": "Before",
+    "after": "After"
+  },
+  "contact": {
+    "title": "Contact Us",
+    "name": "Name",
+    "phone": "Phone Number",
+    "message": "Message",
+    "submit": "Send",
+    "success": "Message sent successfully!",
+    "error": "Something went wrong. Please try again.",
+    "validation": {
+      "required": "This field is required",
+      "phone": "Please enter a valid phone number"
+    }
+  },
+  "location": {
+    "title": "Location",
+    "address": "Tervamäentie 179/5, 04410 Hyvinkää",
+    "hours": "Mon-Fri: 08:00 - 16:30"
+  },
+  "footer": {
+    "rights": "All rights reserved."
+  }
+}

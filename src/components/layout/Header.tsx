@@ -13,9 +13,14 @@ const navItems = [
 ];
 
 export const Header = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  const toggleLanguage = () => {
+    const nextLang = i18n.language.startsWith('fi') ? 'en' : 'fi';
+    i18n.changeLanguage(nextLang);
+  };
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 50);
@@ -35,26 +40,36 @@ export const Header = () => {
           IS-AUTOPAINT
         </a>
 
-        {/* Desktop Nav */}
-        <nav className="hidden md:flex gap-8">
-          {navItems.map((item) => (
-            <a
-              key={item.key}
-              href={item.href}
-              className="text-sm font-medium uppercase tracking-widest hover:text-accent transition-colors"
-            >
-              {t(`nav.${item.key}`)}
-            </a>
-          ))}
-        </nav>
+        <div className="flex items-center gap-8">
+          {/* Desktop Nav */}
+          <nav className="hidden md:flex gap-8">
+            {navItems.map((item) => (
+              <a
+                key={item.key}
+                href={item.href}
+                className="text-sm font-medium uppercase tracking-widest hover:text-accent transition-colors"
+              >
+                {t(`nav.${item.key}`)}
+              </a>
+            ))}
+          </nav>
 
-        {/* Mobile Toggle */}
-        <button
-          className="md:hidden p-2"
-          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-        >
-          {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
+          {/* Language Switcher */}
+          <button
+            onClick={toggleLanguage}
+            className="text-xs font-bold uppercase tracking-widest hover:text-accent transition-colors border border-black/10 px-2 py-1 rounded-sm"
+          >
+            {i18n.language.startsWith('fi') ? 'EN' : 'FI'}
+          </button>
+
+          {/* Mobile Toggle */}
+          <button
+            className="md:hidden p-2"
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          >
+            {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+        </div>
       </div>
 
       {/* Mobile Nav */}
