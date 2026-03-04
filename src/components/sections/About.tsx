@@ -29,12 +29,13 @@ export const About = () => {
           viewport={{ once: true }}
           className="relative aspect-video lg:aspect-square bg-zinc-100 overflow-hidden"
         >
-          <img
-            src={MEDIA.about.workshop}
-            alt="Professional painting"
-            className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
-            loading="lazy"
-            referrerPolicy="no-referrer"
+          <video
+            src={MEDIA.about.video}
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700 pointer-events-none"
           />
         </motion.div>
       </div>

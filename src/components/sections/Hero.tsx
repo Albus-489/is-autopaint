@@ -7,11 +7,23 @@ export const Hero = () => {
   const { t } = useTranslation();
   const { scrollY } = useScroll();
 
-  // Smoothly transform glassmorphism properties based on scroll position (0 to 500px)
-  const backdropFilter = useTransform(scrollY, [0, 500], ['blur(12px)', 'blur(0px)']);
-  const backgroundColor = useTransform(scrollY, [0, 500], ['rgba(255, 255, 255, 0.4)', 'rgba(255, 255, 255, 0)']);
-  const borderColor = useTransform(scrollY, [0, 500], ['rgba(255, 255, 255, 0.2)', 'rgba(255, 255, 255, 0)']);
-  const opacity = useTransform(scrollY, [0, 500], [1, 0.8]); // Slight fade for the whole block content if desired, or keep at 1
+  // Smoothly transform glassmorphism properties based on scroll position (0 to 80px)
+  const backdropFilter = useTransform(
+    scrollY,
+    [0, 80],
+    ['blur(12px)', 'blur(0px)'],
+  );
+  const backgroundColor = useTransform(
+    scrollY,
+    [0, 80],
+    ['rgba(255, 255, 255, 0.4)', 'rgba(255, 255, 255, 0)'],
+  );
+  const borderColor = useTransform(
+    scrollY,
+    [0, 80],
+    ['rgba(255, 255, 255, 0.2)', 'rgba(255, 255, 255, 0)'],
+  );
+  const opacity = useTransform(scrollY, [0, 80], [1, 0.8]);
 
   return (
     <section className="relative h-screen flex items-center justify-center overflow-hidden bg-white">

@@ -12,6 +12,7 @@ export const MEDIA = {
   },
   about: {
     workshop: `${BASE_PATH}/about/workshop-interior.jpg`,
+    video: `${BASE_PATH}/about/workshop-video.mp4`,
   },
   services: {
     painting: `${BASE_PATH}/services/painting.jpg`,
@@ -46,13 +47,13 @@ export const MEDIA = {
       id: 'case-01',
       before: `${BASE_PATH}/before-after/case-01-before.jpg`,
       after: `${BASE_PATH}/before-after/case-01-after.jpg`,
-      title: 'Kylkivaurion korjaus',
+      title: '',
     },
     {
       id: 'case-02',
       before: `${BASE_PATH}/before-after/case-02-before.jpg`,
       after: `${BASE_PATH}/before-after/case-02-after.jpg`,
-      title: 'Puskurin ja lokasuojan maalaus',
+      title: '',
     }
   ],
 };
