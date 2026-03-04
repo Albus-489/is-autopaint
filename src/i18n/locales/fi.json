@@ -3,6 +3,7 @@
     "home": "Etusivu",
     "services": "Palvelut",
     "about": "Yritys",
+    "beforeAfter": "Ennen & Jälkeen",
     "gallery": "Galleria",
     "contact": "Ota yhteyttä"
   },
@@ -37,6 +38,11 @@
   },
   "gallery": {
     "title": "Työn jälki"
+  },
+  "beforeAfter": {
+    "title": "Ennen & Jälkeen",
+    "before": "Ennen",
+    "after": "Jälkeen"
   },
   "contact": {
     "title": "Ota yhteyttä",

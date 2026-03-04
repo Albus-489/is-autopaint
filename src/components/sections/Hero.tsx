@@ -7,18 +7,18 @@ export const Hero = () => {
   const { t } = useTranslation();
 
   return (
-    <section className="relative h-screen flex items-center justify-center overflow-hidden bg-zinc-950">
-      <div className="absolute inset-0 opacity-40">
+    <section className="relative h-screen flex items-center justify-center overflow-hidden bg-white">
+      <div className="absolute inset-0">
         <img
           src={MEDIA.hero.main}
           alt="Auto repair workshop"
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover opacity-80"
           loading="lazy"
           referrerPolicy="no-referrer"
         />
       </div>
       
-      <div className="container-custom relative z-10 text-center text-white">
+      <div className="container-custom relative z-10 text-center text-zinc-900">
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -32,7 +32,7 @@ export const Hero = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="text-lg md:text-xl text-zinc-300 mb-10 max-w-2xl mx-auto font-light"
+          className="text-lg md:text-xl text-zinc-600 mb-10 max-w-2xl mx-auto font-light"
         >
           {t('hero.subtitle')}
         </motion.p>
@@ -44,7 +44,7 @@ export const Hero = () => {
         >
           <a
             href="#contact"
-            className="inline-block bg-white text-black px-8 py-4 text-sm font-bold uppercase tracking-widest hover:bg-accent hover:text-white transition-all rounded-sm"
+            className="inline-block bg-black text-white px-8 py-4 text-sm font-bold uppercase tracking-widest hover:bg-accent transition-all rounded-sm"
           >
             {t('hero.cta')}
           </a>

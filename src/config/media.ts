@@ -40,15 +40,19 @@ export const MEDIA = {
       src: `${BASE_PATH}/gallery/work-04.jpg`,
       alt: 'Viimeistely',
     },
-    {
-      id: 'work-05',
-      src: `${BASE_PATH}/gallery/work-05.jpg`,
-      alt: 'Puskurin korjaus',
-    },
-    {
-      id: 'work-06',
-      src: `${BASE_PATH}/gallery/work-06.jpg`,
-      alt: 'Valmis työn jälki',
-    },
   ] as GalleryImage[],
+  beforeAfter: [
+    {
+      id: 'case-01',
+      before: `${BASE_PATH}/before-after/case-01-before.jpg`,
+      after: `${BASE_PATH}/before-after/case-01-after.jpg`,
+      title: 'Kylkivaurion korjaus',
+    },
+    {
+      id: 'case-02',
+      before: `${BASE_PATH}/before-after/case-02-before.jpg`,
+      after: `${BASE_PATH}/before-after/case-02-after.jpg`,
+      title: 'Puskurin ja lokasuojan maalaus',
+    }
+  ],
 };
