@@ -7,7 +7,8 @@ import { fileURLToPath } from 'url';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-// Load .env from the same directory as server.ts
+// Load .env only if it exists (mainly for local dev)
+// On hosting platforms, variables are usually injected directly into process.env
 dotenv.config({ path: path.resolve(__dirname, '.env') });
 
 async function startServer() {

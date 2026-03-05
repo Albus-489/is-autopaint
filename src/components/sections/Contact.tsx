@@ -20,11 +20,31 @@ export const Contact = () => {
   });
 
   const onSubmit = async (data: ContactFormData) => {
+    const token = import.meta.env.VITE_TELEGRAM_BOT_TOKEN;
+    const chatId = import.meta.env.VITE_TELEGRAM_CHAT_ID;
+
+    if (!token || !chatId) {
+      console.error('Telegram credentials missing in environment variables');
+      alert('System configuration error. Please try again later.');
+      return;
+    }
+
+    const text = `
+🆕 <b>Uusi yhteydenotto (IS-Autopaint)</b>
+👤 <b>Nimi:</b> ${data.name}
+📞 <b>Puhelin:</b> ${data.phone}
+💬 <b>Viesti:</b> ${data.message}
+    `.trim();
+
     try {
-      const response = await fetch('/api/contact', {
+      const response = await fetch(`https://api.telegram.org/bot${token}/sendMessage`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(data),
+        body: JSON.stringify({
+          chat_id: chatId,
+          text: text,
+          parse_mode: 'HTML',
+        }),
       });
 
       if (response.ok) {
@@ -32,7 +52,8 @@ export const Contact = () => {
         reset();
         setTimeout(() => setIsSubmitted(false), 5000);
       } else {
-        console.error('Failed to send message');
+        const errorData = await response.json();
+        console.error('Telegram API error:', errorData);
         alert(t('contact.error'));
       }
     } catch (error) {
