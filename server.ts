@@ -1,8 +1,14 @@
 import express from 'express';
 import { createServer as createViteServer } from 'vite';
 import dotenv from 'dotenv';
+import path from 'path';
+import { fileURLToPath } from 'url';
 
-dotenv.config();
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+// Load .env from the same directory as server.ts
+dotenv.config({ path: path.resolve(__dirname, '.env') });
 
 async function startServer() {
   const app = express();
@@ -17,7 +23,11 @@ async function startServer() {
     const chatId = process.env.TELEGRAM_CHAT_ID;
 
     if (!token || !chatId) {
-      console.error('Telegram credentials missing');
+      console.error('--- DEBUG: Environment Variables ---');
+      console.error('TELEGRAM_BOT_TOKEN:', token ? 'Exists (starts with ' + token.substring(0, 5) + '...)' : 'MISSING');
+      console.error('TELEGRAM_CHAT_ID:', chatId ? 'Exists' : 'MISSING');
+      console.error('Current Directory:', process.cwd());
+      console.error('------------------------------------');
       return res.status(500).json({ error: 'Server configuration error' });
     }
 
