@@ -32,7 +32,7 @@ export const Header = () => {
     <header
       className={cn(
         'fixed top-0 left-0 right-0 z-50 transition-all duration-500 border-b',
-        isScrolled 
+        (isScrolled || isMobileMenuOpen)
           ? 'bg-white/80 backdrop-blur-md py-4 border-black/[0.03] premium-shadow' 
           : 'bg-transparent py-8 border-transparent'
       )}
@@ -66,13 +66,23 @@ export const Header = () => {
             <span className={i18n.language.startsWith('fi') ? 'text-black' : 'text-zinc-300'}>FI</span>
           </button>
 
-          {/* Mobile Toggle */}
-          <button
-            className="md:hidden p-2"
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          >
-            {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
+          {/* Mobile Toggle & Language */}
+          <div className="flex items-center gap-6 md:hidden">
+            <button
+              onClick={toggleLanguage}
+              className="flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.2em] hover:text-accent transition-colors group"
+            >
+              <span className={i18n.language.startsWith('fi') ? 'text-zinc-400' : 'text-black'}>EN</span>
+              <span className="text-zinc-200">/</span>
+              <span className={i18n.language.startsWith('fi') ? 'text-black' : 'text-zinc-400'}>FI</span>
+            </button>
+            <button
+              className="p-1"
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            >
+              {isMobileMenuOpen ? <X size={24} strokeWidth={1.5} /> : <Menu size={24} strokeWidth={1.5} />}
+            </button>
+          </div>
         </div>
       </div>
 
