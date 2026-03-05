@@ -23,7 +23,7 @@ export const Services = () => {
           <div className="h-1 w-20 bg-accent" />
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-px bg-black/5 border border-black/5 overflow-hidden">
           {services.map((service, index) => (
             <motion.div
               key={service.id}
@@ -31,15 +31,20 @@ export const Services = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
-              className="bg-white p-8 border border-black/5 hover:border-accent/20 transition-colors group"
+              className="bg-white p-10 hover:bg-zinc-50 transition-all group relative"
             >
-              <service.icon className="w-10 h-10 mb-6 text-accent group-hover:scale-110 transition-transform" />
-              <h3 className="text-xl font-bold mb-3 uppercase tracking-tight">
+              <div className="absolute top-6 right-8 text-[10px] font-mono text-zinc-300">
+                0{index + 1}
+              </div>
+              <service.icon className="w-8 h-8 mb-8 text-zinc-400 group-hover:text-accent transition-colors" />
+              <h3 className="text-lg font-bold mb-4 uppercase tracking-tight leading-tight">
                 {t(`services.${service.id}.title`)}
               </h3>
-              <p className="text-zinc-500 text-sm leading-relaxed">
+              <p className="text-zinc-500 text-xs leading-relaxed font-light">
                 {t(`services.${service.id}.desc`)}
               </p>
+              
+              <div className="mt-8 h-px w-0 bg-accent group-hover:w-full transition-all duration-500" />
             </motion.div>
           ))}
         </div>

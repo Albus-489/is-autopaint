@@ -46,15 +46,21 @@ export const Hero = () => {
             backdropFilter, 
             backgroundColor, 
             borderColor,
-            WebkitBackdropFilter: backdropFilter // For Safari support
+            WebkitBackdropFilter: backdropFilter
           }}
-          className="border p-8 md:p-16 rounded-[2rem] max-w-4xl text-center shadow-2xl shadow-black/5"
+          className="relative border p-8 md:p-20 rounded-[2.5rem] max-w-4xl text-center premium-shadow"
         >
+          {/* Decorative Crosshair Lines */}
+          <div className="absolute -top-4 -left-4 w-8 h-8 border-t border-l border-black/10" />
+          <div className="absolute -top-4 -right-4 w-8 h-8 border-t border-r border-black/10" />
+          <div className="absolute -bottom-4 -left-4 w-8 h-8 border-b border-l border-black/10" />
+          <div className="absolute -bottom-4 -right-4 w-8 h-8 border-b border-r border-black/10" />
+
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tighter mb-6 text-zinc-900"
+            className="text-4xl md:text-6xl lg:text-8xl font-bold tracking-tighter mb-8 text-zinc-900 leading-[0.9]"
           >
             {t('hero.title')}
           </motion.h1>
@@ -63,7 +69,7 @@ export const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="text-lg md:text-xl text-zinc-800 mb-10 max-w-2xl mx-auto font-medium"
+            className="text-lg md:text-xl text-zinc-600 mb-12 max-w-2xl mx-auto font-light tracking-tight"
           >
             {t('hero.subtitle')}
           </motion.p>
@@ -75,7 +81,7 @@ export const Hero = () => {
           >
             <a
               href="#contact"
-              className="inline-block bg-black text-white px-10 py-4 text-sm font-bold uppercase tracking-widest hover:bg-accent transition-all rounded-full"
+              className="inline-block bg-black text-white px-12 py-5 text-xs font-bold uppercase tracking-[0.2em] hover:bg-accent transition-all rounded-full shadow-lg shadow-black/10"
             >
               {t('hero.cta')}
             </a>

@@ -42,78 +42,82 @@ export const Contact = () => {
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
-            className="bg-green-50 border border-green-100 p-12 text-center rounded-sm"
+            className="bg-zinc-50 border border-black/5 p-16 text-center premium-shadow"
           >
-            <CheckCircle2 className="w-16 h-16 text-green-500 mx-auto mb-4" />
-            <h3 className="text-xl font-bold text-green-800 mb-2">
+            <CheckCircle2 className="w-12 h-12 text-accent mx-auto mb-6" />
+            <h3 className="text-xl font-bold uppercase tracking-tight mb-2">
               {t('contact.success')}
             </h3>
           </motion.div>
         ) : (
-          <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
-            <div>
-              <label className="block text-xs font-bold uppercase tracking-widest mb-2">
-                {t('contact.name')}
-              </label>
-              <input
-                {...register('name')}
-                className="w-full bg-zinc-50 border border-black/5 px-4 py-3 focus:outline-none focus:border-accent transition-colors"
-                placeholder="Matti Meikäläinen"
-              />
-              {errors.name && (
-                <span className="text-red-500 text-xs mt-1">
-                  {t(errors.name.message as string)}
-                </span>
-              )}
+          <form onSubmit={handleSubmit(onSubmit)} className="space-y-12">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+              <div className="relative">
+                <label className="block text-[10px] font-bold uppercase tracking-[0.3em] text-zinc-400 mb-4">
+                  {t('contact.name')}
+                </label>
+                <input
+                  {...register('name')}
+                  className="w-full bg-transparent border-b border-black/10 pb-4 focus:outline-none focus:border-accent transition-colors font-light"
+                  placeholder="Matti Meikäläinen"
+                />
+                {errors.name && (
+                  <span className="absolute -bottom-6 left-0 text-red-500 text-[10px] uppercase tracking-widest">
+                    {t(errors.name.message as string)}
+                  </span>
+                )}
+              </div>
+
+              <div className="relative">
+                <label className="block text-[10px] font-bold uppercase tracking-[0.3em] text-zinc-400 mb-4">
+                  {t('contact.phone')}
+                </label>
+                <input
+                  {...register('phone')}
+                  className="w-full bg-transparent border-b border-black/10 pb-4 focus:outline-none focus:border-accent transition-colors font-light"
+                  placeholder="+358 40 123 4567"
+                />
+                {errors.phone && (
+                  <span className="absolute -bottom-6 left-0 text-red-500 text-[10px] uppercase tracking-widest">
+                    {t(errors.phone.message as string)}
+                  </span>
+                )}
+              </div>
             </div>
 
-            <div>
-              <label className="block text-xs font-bold uppercase tracking-widest mb-2">
-                {t('contact.phone')}
-              </label>
-              <input
-                {...register('phone')}
-                className="w-full bg-zinc-50 border border-black/5 px-4 py-3 focus:outline-none focus:border-accent transition-colors"
-                placeholder="+358 40 123 4567"
-              />
-              {errors.phone && (
-                <span className="text-red-500 text-xs mt-1">
-                  {t(errors.phone.message as string)}
-                </span>
-              )}
-            </div>
-
-            <div>
-              <label className="block text-xs font-bold uppercase tracking-widest mb-2">
+            <div className="relative">
+              <label className="block text-[10px] font-bold uppercase tracking-[0.3em] text-zinc-400 mb-4">
                 {t('contact.message')}
               </label>
               <textarea
                 {...register('message')}
-                rows={5}
-                className="w-full bg-zinc-50 border border-black/5 px-4 py-3 focus:outline-none focus:border-accent transition-colors resize-none"
+                rows={4}
+                className="w-full bg-transparent border-b border-black/10 pb-4 focus:outline-none focus:border-accent transition-colors resize-none font-light"
                 placeholder="..."
               />
               {errors.message && (
-                <span className="text-red-500 text-xs mt-1">
+                <span className="absolute -bottom-6 left-0 text-red-500 text-[10px] uppercase tracking-widest">
                   {t(errors.message.message as string)}
                 </span>
               )}
             </div>
 
-            <button
-              type="submit"
-              disabled={isSubmitting}
-              className="w-full bg-black text-white py-4 text-sm font-bold uppercase tracking-widest hover:bg-accent transition-all flex items-center justify-center gap-2 disabled:opacity-50"
-            >
-              {isSubmitting ? (
-                <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
-              ) : (
-                <>
-                  <Send size={16} />
-                  {t('contact.submit')}
-                </>
-              )}
-            </button>
+            <div className="pt-8">
+              <button
+                type="submit"
+                disabled={isSubmitting}
+                className="group relative w-full bg-black text-white py-6 text-xs font-bold uppercase tracking-[0.3em] hover:bg-accent transition-all flex items-center justify-center gap-4 disabled:opacity-50 overflow-hidden"
+              >
+                {isSubmitting ? (
+                  <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+                ) : (
+                  <>
+                    <Send size={14} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+                    {t('contact.submit')}
+                  </>
+                )}
+              </button>
+            </div>
           </form>
         )}
       </div>

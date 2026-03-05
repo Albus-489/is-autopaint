@@ -31,23 +31,25 @@ export const Header = () => {
   return (
     <header
       className={cn(
-        'fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b',
-        isScrolled ? 'bg-white/90 backdrop-blur-md py-4 border-black/5' : 'bg-transparent py-6 border-transparent'
+        'fixed top-0 left-0 right-0 z-50 transition-all duration-500 border-b',
+        isScrolled 
+          ? 'bg-white/80 backdrop-blur-md py-4 border-black/[0.03] premium-shadow' 
+          : 'bg-transparent py-8 border-transparent'
       )}
     >
       <div className="container-custom flex justify-between items-center">
-        <a href="#" className="text-xl font-bold tracking-tighter">
+        <a href="#" className="text-xl font-bold tracking-tighter uppercase">
           IS-AUTOPAINT
         </a>
 
-        <div className="flex items-center gap-8">
+        <div className="flex items-center gap-12">
           {/* Desktop Nav */}
-          <nav className="hidden md:flex gap-8">
+          <nav className="hidden md:flex gap-10">
             {navItems.map((item) => (
               <a
                 key={item.key}
                 href={item.href}
-                className="text-sm font-medium uppercase tracking-widest hover:text-accent transition-colors"
+                className="text-[10px] font-bold uppercase tracking-[0.3em] text-zinc-400 hover:text-black transition-colors"
               >
                 {t(`nav.${item.key}`)}
               </a>
@@ -57,9 +59,11 @@ export const Header = () => {
           {/* Language Switcher */}
           <button
             onClick={toggleLanguage}
-            className="text-xs font-bold uppercase tracking-widest hover:text-accent transition-colors border border-black/10 px-2 py-1 rounded-sm"
+            className="hidden md:flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.3em] hover:text-accent transition-colors group"
           >
-            {i18n.language.startsWith('fi') ? 'EN' : 'FI'}
+            <span className={i18n.language.startsWith('fi') ? 'text-zinc-300' : 'text-black'}>EN</span>
+            <span className="text-zinc-200">/</span>
+            <span className={i18n.language.startsWith('fi') ? 'text-black' : 'text-zinc-300'}>FI</span>
           </button>
 
           {/* Mobile Toggle */}
