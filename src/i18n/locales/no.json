@@ -1,0 +1,68 @@
+{
+  "nav": {
+    "home": "Hjem",
+    "services": "Tjenester",
+    "about": "Om oss",
+    "beforeAfter": "Før & Etter",
+    "gallery": "Galleri",
+    "contact": "Kontakt oss"
+  },
+  "hero": {
+    "title": "Profesjonell bilreparasjon og lakkering",
+    "subtitle": "IS-Autopaint Oy – Kvalitet og pålitelighet i Hyvinkää.",
+    "cta": "Be om et tilbud"
+  },
+  "services": {
+    "title": "Våre tjenester",
+    "body_repairs": {
+      "title": "Kollisjonsskader",
+      "desc": "Skadereparasjoner med profesjonalitet til original stand."
+    },
+    "plastic_repairs": {
+      "title": "Reparasjon av plastdeler",
+      "desc": "Spar penger og miljøet ved å reparere plastdeler til nystand."
+    },
+    "painting": {
+      "title": "Lakkeringstjenester",
+      "desc": "Høykvalitets billakkering med ovnstørking."
+    },
+    "rust_protection": {
+      "title": "Rustbeskyttelse",
+      "desc": "Forleng bilens levetid med kvalitetsbeskyttelse."
+    }
+  },
+  "about": {
+    "title": "Kvalitet og erfaring",
+    "p1": "IS-Autopaint Oy har spesialisert seg på kollisjonsskader og reparasjon av plastdeler. Vi har lang erfaring i bransjen og bruker kun de beste materialene og den nyeste teknologien.",
+    "p2": "Vårt mål er å returnere det skadede kjøretøyet til sin opprinnelige tilstand så raskt som mulig uten å gå på kompromiss med kvaliteten."
+  },
+  "gallery": {
+    "title": "Arbeidets resultat"
+  },
+  "beforeAfter": {
+    "title": "Før & Etter",
+    "before": "Før",
+    "after": "Etter"
+  },
+  "contact": {
+    "title": "Kontakt oss",
+    "name": "Navn",
+    "phone": "Telefonnummer",
+    "message": "Melding",
+    "submit": "Send",
+    "success": "Meldingen ble sendt!",
+    "error": "Noe gikk galt. Prøv igjen.",
+    "validation": {
+      "required": "Dette feltet er obligatorisk",
+      "phone": "Vennligst oppgi et gyldig telefonnummer"
+    }
+  },
+  "location": {
+    "title": "Beliggenhet",
+    "address": "Tervamäentie 179/5, 04410 Hyvinkää",
+    "hours": "Man-Fre: 08:00 - 16:30"
+  },
+  "footer": {
+    "rights": "Alle rettigheter forbeholdt."
+  }
+}

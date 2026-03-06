@@ -18,7 +18,9 @@ export const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const toggleLanguage = () => {
-    const nextLang = i18n.language.startsWith('fi') ? 'en' : 'fi';
+    const langs = ['fi', 'en', 'no'];
+    const currentIndex = langs.indexOf(i18n.language.split('-')[0]);
+    const nextLang = langs[(currentIndex + 1) % langs.length];
     i18n.changeLanguage(nextLang);
   };
 
@@ -57,25 +59,37 @@ export const Header = () => {
           </nav>
 
           {/* Language Switcher */}
-          <button
-            onClick={toggleLanguage}
-            className="hidden md:flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.3em] hover:text-accent transition-colors group"
-          >
-            <span className={i18n.language.startsWith('fi') ? 'text-zinc-300' : 'text-black'}>EN</span>
-            <span className="text-zinc-200">/</span>
-            <span className={i18n.language.startsWith('fi') ? 'text-black' : 'text-zinc-300'}>FI</span>
-          </button>
+          <div className="hidden md:flex items-center gap-4 text-[10px] font-bold uppercase tracking-[0.3em]">
+            {['EN', 'FI', 'NO'].map((lang) => (
+              <button
+                key={lang}
+                onClick={() => i18n.changeLanguage(lang.toLowerCase())}
+                className={cn(
+                  'hover:text-accent transition-colors',
+                  i18n.language.startsWith(lang.toLowerCase()) ? 'text-black' : 'text-zinc-300'
+                )}
+              >
+                {lang}
+              </button>
+            ))}
+          </div>
 
           {/* Mobile Toggle & Language */}
           <div className="flex items-center gap-6 md:hidden">
-            <button
-              onClick={toggleLanguage}
-              className="flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.2em] hover:text-accent transition-colors group"
-            >
-              <span className={i18n.language.startsWith('fi') ? 'text-zinc-400' : 'text-black'}>EN</span>
-              <span className="text-zinc-200">/</span>
-              <span className={i18n.language.startsWith('fi') ? 'text-black' : 'text-zinc-400'}>FI</span>
-            </button>
+            <div className="flex items-center gap-3 text-[10px] font-bold uppercase tracking-[0.2em]">
+              {['EN', 'FI', 'NO'].map((lang) => (
+                <button
+                  key={lang}
+                  onClick={() => i18n.changeLanguage(lang.toLowerCase())}
+                  className={cn(
+                    'transition-colors',
+                    i18n.language.startsWith(lang.toLowerCase()) ? 'text-black' : 'text-zinc-400'
+                  )}
+                >
+                  {lang}
+                </button>
+              ))}
+            </div>
             <button
               className="p-1"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}

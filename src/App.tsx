@@ -14,8 +14,16 @@ import { Gallery } from './components/sections/Gallery';
 import { Contact } from './components/sections/Contact';
 import { Location } from './components/sections/Location';
 import { Footer } from './components/layout/Footer';
+import { useTranslation } from 'react-i18next';
+import { useEffect } from 'react';
 
 export default function App() {
+  const { i18n } = useTranslation();
+
+  useEffect(() => {
+    document.documentElement.lang = i18n.language.split('-')[0];
+  }, [i18n.language]);
+
   return (
     <Suspense fallback={<div className="h-screen flex items-center justify-center">Ladataan...</div>}>
       <div className="min-h-screen flex flex-col">
