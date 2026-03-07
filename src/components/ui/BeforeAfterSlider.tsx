@@ -27,13 +27,13 @@ export const BeforeAfterSlider: React.FC<BeforeAfterSliderProps> = ({ before, af
   return (
     <div className="flex flex-col gap-4">
       {title && (
-        <h3 className="text-sm font-bold uppercase tracking-widest text-zinc-500">
+        <h3 className="text-sm font-bold uppercase tracking-widest text-zinc-400">
           {title}
         </h3>
       )}
       <div 
         ref={containerRef}
-        className="relative aspect-[16/10] w-full overflow-hidden select-none cursor-ew-resize group"
+        className="relative aspect-[16/10] w-full overflow-hidden select-none cursor-ew-resize group border border-white/5"
         onMouseMove={handleMouseMove}
         onTouchMove={handleTouchMove}
       >
@@ -60,25 +60,25 @@ export const BeforeAfterSlider: React.FC<BeforeAfterSliderProps> = ({ before, af
 
         {/* Labels */}
         <div className="absolute bottom-4 left-4 z-10 pointer-events-none">
-          <span className="bg-black/50 text-white text-[10px] uppercase tracking-widest px-2 py-1 backdrop-blur-sm">
+          <span className="bg-black/70 text-white text-[10px] uppercase tracking-widest px-2 py-1 backdrop-blur-sm border border-white/10">
             {t('beforeAfter.before')}
           </span>
         </div>
         <div className="absolute bottom-4 right-4 z-10 pointer-events-none">
-          <span className="bg-accent/80 text-white text-[10px] uppercase tracking-widest px-2 py-1 backdrop-blur-sm">
+          <span className="bg-accent/80 text-white text-[10px] uppercase tracking-widest px-2 py-1 backdrop-blur-sm border border-white/10">
             {t('beforeAfter.after')}
           </span>
         </div>
 
         {/* Slider Handle */}
         <div 
-          className="absolute top-0 bottom-0 z-20 w-0.5 bg-white shadow-[0_0_10px_rgba(0,0,0,0.3)] pointer-events-none"
+          className="absolute top-0 bottom-0 z-20 w-0.5 bg-white/50 shadow-[0_0_10px_rgba(0,0,0,0.5)] pointer-events-none"
           style={{ left: `${sliderPosition}%` }}
         >
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-8 h-8 bg-white rounded-full shadow-xl flex items-center justify-center border border-zinc-200">
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-8 h-8 bg-zinc-900 rounded-full shadow-xl flex items-center justify-center border border-white/20">
             <div className="flex gap-0.5">
-              <div className="w-0.5 h-3 bg-zinc-400 rounded-full" />
-              <div className="w-0.5 h-3 bg-zinc-400 rounded-full" />
+              <div className="w-0.5 h-3 bg-white/40 rounded-full" />
+              <div className="w-0.5 h-3 bg-white/40 rounded-full" />
             </div>
           </div>
         </div>

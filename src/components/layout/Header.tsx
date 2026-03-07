@@ -35,7 +35,7 @@ export const Header = () => {
       className={cn(
         'fixed top-0 left-0 right-0 z-50 transition-all duration-500 border-b',
         (isScrolled || isMobileMenuOpen)
-          ? 'bg-white/80 backdrop-blur-md py-4 border-black/[0.03] premium-shadow' 
+          ? 'bg-black/80 backdrop-blur-md py-4 border-white/[0.05] premium-shadow' 
           : 'bg-transparent py-8 border-transparent'
       )}
     >
@@ -51,7 +51,7 @@ export const Header = () => {
               <a
                 key={item.key}
                 href={item.href}
-                className="text-[10px] font-bold uppercase tracking-[0.3em] text-zinc-400 hover:text-black transition-colors"
+                className="text-[10px] font-bold uppercase tracking-[0.3em] text-zinc-400 hover:text-white transition-colors"
               >
                 {t(`nav.${item.key}`)}
               </a>
@@ -66,7 +66,7 @@ export const Header = () => {
                 onClick={() => i18n.changeLanguage(lang.toLowerCase())}
                 className={cn(
                   'hover:text-accent transition-colors',
-                  i18n.language.startsWith(lang.toLowerCase()) ? 'text-black' : 'text-zinc-300'
+                  i18n.language.startsWith(lang.toLowerCase()) ? 'text-white' : 'text-zinc-500'
                 )}
               >
                 {lang}
@@ -83,7 +83,7 @@ export const Header = () => {
                   onClick={() => i18n.changeLanguage(lang.toLowerCase())}
                   className={cn(
                     'transition-colors',
-                    i18n.language.startsWith(lang.toLowerCase()) ? 'text-black' : 'text-zinc-400'
+                    i18n.language.startsWith(lang.toLowerCase()) ? 'text-white' : 'text-zinc-500'
                   )}
                 >
                   {lang}
@@ -102,12 +102,12 @@ export const Header = () => {
 
       {/* Mobile Nav */}
       {isMobileMenuOpen && (
-        <div className="md:hidden absolute top-full left-0 right-0 bg-white border-b border-black/5 p-6 flex flex-col gap-4">
+        <div className="md:hidden absolute top-full left-0 right-0 bg-black border-b border-white/10 p-6 flex flex-col gap-4">
           {navItems.map((item) => (
             <a
               key={item.key}
               href={item.href}
-              className="text-lg font-medium"
+              className="text-lg font-medium text-white"
               onClick={() => setIsMobileMenuOpen(false)}
             >
               {t(`nav.${item.key}`)}

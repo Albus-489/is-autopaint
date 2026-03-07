@@ -21,9 +21,9 @@ export const About = () => {
           <h2 className="text-4xl md:text-5xl font-bold tracking-tighter uppercase mb-12 leading-[0.9]">
             {t('about.title')}
           </h2>
-          <div className="space-y-8 text-zinc-500 leading-relaxed font-light text-lg">
-            <p className="relative pl-8 border-l border-black/5">{t('about.p1')}</p>
-            <p className="relative pl-8 border-l border-black/5">{t('about.p2')}</p>
+          <div className="space-y-8 text-zinc-300 leading-relaxed font-light text-lg">
+            <p className="relative pl-8 border-l border-white/10">{t('about.p1')}</p>
+            <p className="relative pl-8 border-l border-white/10">{t('about.p2')}</p>
           </div>
         </motion.div>
 
@@ -31,9 +31,9 @@ export const About = () => {
           initial={{ opacity: 0, x: 30 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
-          className="relative p-4 border border-black/5"
+          className="relative p-4 border border-white/10"
         >
-          <div className="relative aspect-video lg:aspect-square bg-zinc-100 overflow-hidden">
+          <div className="relative aspect-video lg:aspect-square bg-zinc-900 overflow-hidden">
             <video
               src={MEDIA.about.video}
               autoPlay
@@ -44,7 +44,7 @@ export const About = () => {
             />
           </div>
           {/* Decorative Corner */}
-          <div className="absolute -bottom-2 -right-2 w-12 h-12 border-b-2 border-r-2 border-accent/20" />
+          <div className="absolute -bottom-2 -right-2 w-12 h-12 border-b-2 border-r-2 border-accent/40" />
         </motion.div>
       </div>
     </section>

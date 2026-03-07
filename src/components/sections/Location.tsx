@@ -6,7 +6,7 @@ export const Location = () => {
   const { t } = useTranslation();
 
   return (
-    <section className="bg-zinc-950 text-white">
+    <section className="bg-black text-white border-t border-white/5">
       <div className="grid grid-cols-1 lg:grid-cols-2">
         <div className="p-12 md:p-24 flex flex-col justify-center">
           <h2 className="text-3xl font-bold tracking-tighter uppercase mb-12">
@@ -17,22 +17,22 @@ export const Location = () => {
             <div className="flex gap-4">
               <MapPin className="text-accent shrink-0" />
               <div>
-                <p className="text-sm font-bold uppercase tracking-widest mb-1">Osoite</p>
-                <p className="text-zinc-400">{t('location.address')}</p>
+                <p className="text-sm font-bold uppercase tracking-widest mb-1 text-white">Osoite</p>
+                <p className="text-zinc-400 font-light">{t('location.address')}</p>
               </div>
             </div>
 
             <div className="flex gap-4">
               <Clock className="text-accent shrink-0" />
               <div>
-                <p className="text-sm font-bold uppercase tracking-widest mb-1">Aukioloajat</p>
-                <p className="text-zinc-400">{t('location.hours')}</p>
+                <p className="text-sm font-bold uppercase tracking-widest mb-1 text-white">Aukioloajat</p>
+                <p className="text-zinc-400 font-light">{t('location.hours')}</p>
               </div>
             </div>
           </div>
         </div>
 
-        <div className="h-[400px] lg:h-auto bg-zinc-900 relative">
+        <div className="h-[400px] lg:h-auto bg-zinc-950 relative border-l border-white/5">
           {/* Placeholder for Map */}
           <div className="absolute inset-0 flex items-center justify-center text-zinc-700 text-sm uppercase tracking-widest">
             <div className="text-center">

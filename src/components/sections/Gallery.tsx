@@ -10,7 +10,7 @@ export const Gallery = () => {
   const [index, setIndex] = useState(-1);
 
   return (
-    <section id="gallery" className="section-padding bg-zinc-50">
+    <section id="gallery" className="section-padding bg-black">
       <div className="container-custom">
         <div className="mb-16 text-center">
           <h2 className="text-3xl md:text-4xl font-bold tracking-tighter uppercase mb-4">

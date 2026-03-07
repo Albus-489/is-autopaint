@@ -76,7 +76,7 @@ export const Contact = () => {
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
-            className="bg-zinc-50 border border-black/5 p-16 text-center premium-shadow"
+            className="bg-zinc-900 border border-white/10 p-16 text-center premium-shadow"
           >
             <CheckCircle2 className="w-12 h-12 text-accent mx-auto mb-6" />
             <h3 className="text-xl font-bold uppercase tracking-tight mb-2">
@@ -92,7 +92,7 @@ export const Contact = () => {
                 </label>
                 <input
                   {...register('name')}
-                  className="w-full bg-transparent border-b border-black/10 pb-4 focus:outline-none focus:border-accent transition-colors font-light"
+                  className="w-full bg-transparent border-b border-white/20 pb-4 focus:outline-none focus:border-accent transition-colors font-light text-white"
                   placeholder="Matti Meikäläinen"
                 />
                 {errors.name && (
@@ -108,7 +108,7 @@ export const Contact = () => {
                 </label>
                 <input
                   {...register('phone')}
-                  className="w-full bg-transparent border-b border-black/10 pb-4 focus:outline-none focus:border-accent transition-colors font-light"
+                  className="w-full bg-transparent border-b border-white/20 pb-4 focus:outline-none focus:border-accent transition-colors font-light text-white"
                   placeholder="+358 40 123 4567"
                 />
                 {errors.phone && (
@@ -126,7 +126,7 @@ export const Contact = () => {
               <textarea
                 {...register('message')}
                 rows={4}
-                className="w-full bg-transparent border-b border-black/10 pb-4 focus:outline-none focus:border-accent transition-colors resize-none font-light"
+                className="w-full bg-transparent border-b border-white/20 pb-4 focus:outline-none focus:border-accent transition-colors resize-none font-light text-white"
                 placeholder="..."
               />
               {errors.message && (
@@ -140,10 +140,10 @@ export const Contact = () => {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="group relative w-full bg-black text-white py-6 text-xs font-bold uppercase tracking-[0.3em] hover:bg-accent transition-all flex items-center justify-center gap-4 disabled:opacity-50 overflow-hidden"
+                className="group relative w-full bg-white text-black py-6 text-xs font-bold uppercase tracking-[0.3em] hover:bg-accent hover:text-white transition-all flex items-center justify-center gap-4 disabled:opacity-50 overflow-hidden"
               >
                 {isSubmitting ? (
-                  <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+                  <div className="w-5 h-5 border-2 border-black/30 border-t-black rounded-full animate-spin" />
                 ) : (
                   <>
                     <Send size={14} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />

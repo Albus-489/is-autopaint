@@ -8,7 +8,7 @@ export const BeforeAfter = () => {
   const { t } = useTranslation();
 
   return (
-    <section id="before-after" className="section-padding bg-white">
+    <section id="before-after" className="section-padding bg-[#0a0a0a]">
       <div className="container-custom">
         <div className="mb-16 text-center md:text-left">
           <h2 className="text-3xl md:text-4xl font-bold tracking-tighter uppercase mb-4">
